@@ -2,11 +2,9 @@ package com.example.spring4shell.controller;
 
 import com.example.spring4shell.model.HelloWorld;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
 
 /**
  * Spring MVC Controller vulnerable to CVE-2022-22965 via classloader injection
