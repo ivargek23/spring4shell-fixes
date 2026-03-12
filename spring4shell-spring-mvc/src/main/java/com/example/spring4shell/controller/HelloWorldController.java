@@ -19,6 +19,7 @@ import java.time.OffsetDateTime;
 @Controller
 public class HelloWorldController {
     private static final String MODEL_ATTRIBUTE_NAME = "model=";
+    private static final String REQUEST_PATH = "request";
 
     @RequestMapping({ "/", "/request", }) // RequestMapping implements automatically all CRUD (HTTP) verbs
     public String handler(HelloWorld model) {
@@ -27,7 +28,7 @@ public class HelloWorldController {
         helloWorld.setEndpoint("/request");
         helloWorld.setIsVulnerable(true);
         helloWorld.setDateTime(LocalDateTime.now().toString());
-        return "request";
+        return REQUEST_PATH;
     }
 
     @GetMapping({ "/get"})
@@ -38,7 +39,7 @@ public class HelloWorldController {
         helloWorld.setEndpoint("/get");
         helloWorld.setIsVulnerable(false);
         helloWorld.setDateTime(LocalDateTime.now().toString());
-        return "request";
+        return REQUEST_PATH;
     }
 
     /** @deprecated */
@@ -50,7 +51,7 @@ public class HelloWorldController {
         helloWorld.setEndpoint("/post");
         helloWorld.setIsVulnerable(true);
         helloWorld.setDateTime(LocalDateTime.now().toString());
-        return "request";
+        return REQUEST_PATH;
     }
 
     @PutMapping({ "/put"})
@@ -61,6 +62,6 @@ public class HelloWorldController {
         helloWorld.setEndpoint("/post");
         helloWorld.setIsVulnerable(false);
         helloWorld.setDateTime(LocalDateTime.now().toString());
-        return "request";
+        return REQUEST_PATH;
     }
 }
