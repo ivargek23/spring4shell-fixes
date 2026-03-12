@@ -24,7 +24,6 @@ public class RestHelloWorldController {
     }
 
     @GetMapping({ "/rest/get"})
-    @ResponseBody
     public String dotGet(HelloWorld model) {
         HelloWorld helloWorld = new HelloWorld();
         helloWorld.setMessage(MODEL_ATTRIBUTE_NAME + model);
@@ -35,7 +34,6 @@ public class RestHelloWorldController {
     }
 
     @PostMapping({ "/rest/post"})
-    @ResponseBody
     public String doPost(HelloWorld model) {
         HelloWorld helloWorld = new HelloWorld();
         helloWorld.setMessage(MODEL_ATTRIBUTE_NAME + model);
@@ -46,7 +44,6 @@ public class RestHelloWorldController {
     }
 
     @PutMapping({ "/rest/put"})
-    @ResponseBody
     public String doPut(HelloWorld model) {
         HelloWorld helloWorld = new HelloWorld();
         helloWorld.setMessage(MODEL_ATTRIBUTE_NAME + model);
