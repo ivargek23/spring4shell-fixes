@@ -10,11 +10,12 @@ import java.time.LocalDateTime;
  */
 @RestController
 public class RestHelloWorldController {
+    private static final String MODEL_ATTRIBUTE_NAME = "model=";
 
     @RequestMapping({ "/rest/", "/rest/request" })
     public String doRequest(HelloWorld model) {
         HelloWorld helloWorld = new HelloWorld();
-        helloWorld.setMessage("model=" + model);
+        helloWorld.setMessage(MODEL_ATTRIBUTE_NAME + model);
         helloWorld.setEndpoint("/rest/request");
         helloWorld.setIsVulnerable(true);
         helloWorld.setDateTime(LocalDateTime.now().toString());
@@ -25,7 +26,7 @@ public class RestHelloWorldController {
     @ResponseBody
     public String dotGet(HelloWorld model) {
         HelloWorld helloWorld = new HelloWorld();
-        helloWorld.setMessage("model=" + model);
+        helloWorld.setMessage(MODEL_ATTRIBUTE_NAME + model);
         helloWorld.setEndpoint("/rest/get");
         helloWorld.setIsVulnerable(false);
         helloWorld.setDateTime(LocalDateTime.now().toString());
@@ -36,7 +37,7 @@ public class RestHelloWorldController {
     @ResponseBody
     public String doPost(HelloWorld model) {
         HelloWorld helloWorld = new HelloWorld();
-        helloWorld.setMessage("model=" + model);
+        helloWorld.setMessage(MODEL_ATTRIBUTE_NAME + model);
         helloWorld.setEndpoint("/rest/post");
         helloWorld.setIsVulnerable(true);
         helloWorld.setDateTime(LocalDateTime.now().toString());
@@ -47,7 +48,7 @@ public class RestHelloWorldController {
     @ResponseBody
     public String doPut(HelloWorld model) {
         HelloWorld helloWorld = new HelloWorld();
-        helloWorld.setMessage("model=" + model);
+        helloWorld.setMessage(MODEL_ATTRIBUTE_NAME + model);
         helloWorld.setEndpoint("/rest/put");
         helloWorld.setIsVulnerable(false);
         helloWorld.setDateTime(LocalDateTime.now().toString());
