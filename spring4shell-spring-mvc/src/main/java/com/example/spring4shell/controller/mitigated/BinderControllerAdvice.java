@@ -14,7 +14,7 @@ public class BinderControllerAdvice {
         // For more details, see this post: https://www.lunasec.io/docs/blog/spring-rce-vulnerabilities/
         
         String property = System.getProperty("APPLY_ADVICE", System.getenv("APPLY_ADVICE"));
-        if (Boolean.valueOf(property)) { // turned off by default to allow exploit to be reproduced. When fixing, turn it on by default! 
+        if (Boolean.parseBoolean(property)) { // turned off by default to allow exploit to be reproduced. When fixing, turn it on by default!
             String[] denylist = new String[] { "class.*", "Class.*", "*.class.*", "*.Class.*" };
             dataBinder.setDisallowedFields(denylist);
         }
