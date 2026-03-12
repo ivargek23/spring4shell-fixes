@@ -18,11 +18,12 @@ import java.time.OffsetDateTime;
  */
 @Controller
 public class HelloWorldController {
+    private static final String MODEL_ATTRIBUTE_NAME = "model=";
 
     @RequestMapping({ "/", "/request", }) // RequestMapping implements automatically all CRUD (HTTP) verbs
     public String handler(HelloWorld model) {
         HelloWorld helloWorld = new HelloWorld();
-        helloWorld.setMessage("model=" + model);
+        helloWorld.setMessage(MODEL_ATTRIBUTE_NAME + model);
         helloWorld.setEndpoint("/request");
         helloWorld.setIsVulnerable(true);
         helloWorld.setDateTime(LocalDateTime.now().toString());
@@ -33,7 +34,7 @@ public class HelloWorldController {
     @ResponseBody
     public String doGet(HelloWorld model) {
         HelloWorld helloWorld = new HelloWorld();
-        helloWorld.setMessage("model=" + model);
+        helloWorld.setMessage(MODEL_ATTRIBUTE_NAME + model);
         helloWorld.setEndpoint("/get");
         helloWorld.setIsVulnerable(false);
         helloWorld.setDateTime(LocalDateTime.now().toString());
@@ -45,7 +46,7 @@ public class HelloWorldController {
     @ResponseBody
     public String doPost(HelloWorld model) {
         HelloWorld helloWorld = new HelloWorld();
-        helloWorld.setMessage("model=" + model);
+        helloWorld.setMessage(MODEL_ATTRIBUTE_NAME + model);
         helloWorld.setEndpoint("/post");
         helloWorld.setIsVulnerable(true);
         helloWorld.setDateTime(LocalDateTime.now().toString());
@@ -56,7 +57,7 @@ public class HelloWorldController {
     @ResponseBody
     public String doPut(HelloWorld model) {
         HelloWorld helloWorld = new HelloWorld();
-        helloWorld.setMessage("model=" + model);
+        helloWorld.setMessage(MODEL_ATTRIBUTE_NAME + model);
         helloWorld.setEndpoint("/post");
         helloWorld.setIsVulnerable(false);
         helloWorld.setDateTime(LocalDateTime.now().toString());
