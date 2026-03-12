@@ -3,6 +3,7 @@ package com.example.spring4shell.controller.mitigated;
 import com.example.spring4shell.model.HelloWorld;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -11,7 +12,7 @@ import java.time.LocalDateTime;
 @Controller
 public class SafeHelloWorldController {
 
-    @RequestMapping("/safe-request")
+    @GetMapping("/safe-request")
     public String handler(HelloWorld model) {
         HelloWorld helloWorld = new HelloWorld();
         helloWorld.setMessage("Hello World Example Using Spring MVC 5!!!");

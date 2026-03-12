@@ -13,7 +13,7 @@ public class RestHelloWorldController {
     private static final String MODEL_ATTRIBUTE_NAME = "model=";
     private static final String REQUEST_PATH = "request";
 
-    @RequestMapping({ "/rest/", "/rest/request" })
+    @RequestMapping(value = { "/rest/", "/rest/request" }, method = { RequestMethod.GET})
     public String doRequest(HelloWorld model) {
         HelloWorld helloWorld = new HelloWorld();
         helloWorld.setMessage(MODEL_ATTRIBUTE_NAME + model);
