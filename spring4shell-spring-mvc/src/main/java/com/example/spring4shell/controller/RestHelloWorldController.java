@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @RestController
 public class RestHelloWorldController {
     private static final String MODEL_ATTRIBUTE_NAME = "model=";
+    private static final String REQUEST_PATH = "request";
 
     @RequestMapping({ "/rest/", "/rest/request" })
     public String doRequest(HelloWorld model) {
@@ -19,7 +20,7 @@ public class RestHelloWorldController {
         helloWorld.setEndpoint("/rest/request");
         helloWorld.setIsVulnerable(true);
         helloWorld.setDateTime(LocalDateTime.now().toString());
-        return "request";
+        return REQUEST_PATH;
     }
 
     @GetMapping({ "/rest/get"})
@@ -30,7 +31,7 @@ public class RestHelloWorldController {
         helloWorld.setEndpoint("/rest/get");
         helloWorld.setIsVulnerable(false);
         helloWorld.setDateTime(LocalDateTime.now().toString());
-        return "request";
+        return REQUEST_PATH;
     }
 
     @PostMapping({ "/rest/post"})
@@ -41,7 +42,7 @@ public class RestHelloWorldController {
         helloWorld.setEndpoint("/rest/post");
         helloWorld.setIsVulnerable(true);
         helloWorld.setDateTime(LocalDateTime.now().toString());
-        return "request";
+        return REQUEST_PATH;
     }
 
     @PutMapping({ "/rest/put"})
@@ -52,6 +53,6 @@ public class RestHelloWorldController {
         helloWorld.setEndpoint("/rest/put");
         helloWorld.setIsVulnerable(false);
         helloWorld.setDateTime(LocalDateTime.now().toString());
-        return "request";
+        return REQUEST_PATH;
     }
 }
