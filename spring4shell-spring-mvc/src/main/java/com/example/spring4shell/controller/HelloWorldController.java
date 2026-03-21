@@ -20,7 +20,7 @@ public class HelloWorldController {
     private static final String MODEL_ATTRIBUTE_NAME = "model=";
     private static final String REQUEST_PATH = "request";
 
-    @RequestMapping(value = { "/", "/request" }, method = { RequestMethod.GET}) // RequestMapping implements automatically all CRUD (HTTP) verbs
+    @GetMapping(value = { "/", "/request" }) // RequestMapping implements automatically all CRUD (HTTP) verbs
     public String handler(HelloWorld model) {
         HelloWorld helloWorld = new HelloWorld();
         helloWorld.setMessage(MODEL_ATTRIBUTE_NAME + model);
