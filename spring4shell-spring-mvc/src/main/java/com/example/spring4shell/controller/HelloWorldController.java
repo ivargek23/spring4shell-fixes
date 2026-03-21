@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
  * @deprecated upgrade spring-core >=5.3.18, >=5.2.20, and Spring Boot >=2.5.12 and >=2.6.6 or deny class injections
  *             explicitly via BinderControllerAdvice.class
  */
-@Deprecated
+@Deprecated(since = "2022-04-20", forRemoval = true)
 @Controller
 public class HelloWorldController {
     private static final String MODEL_ATTRIBUTE_NAME = "model=";
