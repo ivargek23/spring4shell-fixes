@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: spring4shell-spring-mvc

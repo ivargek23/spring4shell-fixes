@@ -1,7 +1,6 @@
 package com.example.spring4shell.controller;
 
 import com.example.spring4shell.model.HelloWorld;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -13,7 +12,7 @@ public class RestHelloWorldController {
     private static final String MODEL_ATTRIBUTE_NAME = "model=";
     private static final String REQUEST_PATH = "request";
 
-    @RequestMapping(value = { "/rest/", "/rest/request" }, method = { RequestMethod.GET})
+    @GetMapping(value = { "/rest/", "/rest/request" })
     public String doRequest(HelloWorld model) {
         HelloWorld helloWorld = new HelloWorld();
         helloWorld.setMessage(MODEL_ATTRIBUTE_NAME + model);

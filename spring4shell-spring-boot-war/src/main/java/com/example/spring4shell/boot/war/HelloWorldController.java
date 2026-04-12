@@ -15,31 +15,35 @@ import java.time.OffsetDateTime;
 public class HelloWorldController {
 
     private static final Logger logger = LoggerFactory.getLogger(HelloWorldController.class);
-
+    public static final String MODEL = "model = {}";
+    public static final String HELLO_WORLD = "helloworld";
+    public static final String MODEL_ATTRIBUTE_NAME = "model";
     @RequestMapping({ "/", "/helloworld", "spring4shell/helloworld" })
     public String index(Model model) {
-        logger.info("model = {}", model);
-        model.addAttribute("model", String.valueOf(model));
+        logger.info(MODEL, model);
+        model.addAttribute(MODEL_ATTRIBUTE_NAME, String.valueOf(model));
         model.addAttribute("time", OffsetDateTime.now().toString());
-        return "helloworld";
+        return HELLO_WORLD;
     }
 
     @GetMapping({ "/test"})
     @ResponseBody
-    public String get_test(Model model) {
-        logger.info("model = {}", model);
-        model.addAttribute("model", String.valueOf(model));
+    public String getTest(Model model) {
+        logger.info(MODEL, model);
+        model.addAttribute(MODEL_ATTRIBUTE_NAME, String.valueOf(model));
         model.addAttribute("time", OffsetDateTime.now().toString());
-        return "helloworld";
+        model.addAttribute("get", "true");
+        return HELLO_WORLD;
     }
 
     @PostMapping({ "/test"})
     @ResponseBody
-    public String post_test(Model model) {
-        logger.info("model = {}", model);
-        model.addAttribute("model", String.valueOf(model));
+    public String postTest(Model model) {
+        logger.info(MODEL, model);
+        model.addAttribute(MODEL_ATTRIBUTE_NAME, String.valueOf(model));
         model.addAttribute("time", OffsetDateTime.now().toString());
-        return "helloworld";
+        model.addAttribute("post", "true");
+        return HELLO_WORLD;
     }
 
 }

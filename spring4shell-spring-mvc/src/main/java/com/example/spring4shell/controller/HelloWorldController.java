@@ -23,6 +23,7 @@ public class HelloWorldController {
     @GetMapping(value = { "/", "/request" }) // RequestMapping implements automatically all CRUD (HTTP) verbs
     public String handler(HelloWorld model) {
         HelloWorld helloWorld = new HelloWorld();
+
         helloWorld.setMessage(MODEL_ATTRIBUTE_NAME + model);
         helloWorld.setEndpoint("/request");
         helloWorld.setIsVulnerable(true);
